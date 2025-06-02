@@ -26,4 +26,4 @@ class Square:
     @size.setter
     def size(self, value):
         """ Iniatialising a setter """
-        self.__radius = value
+        self.__size = value
