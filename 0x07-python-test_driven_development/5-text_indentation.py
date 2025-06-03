@@ -15,7 +15,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
 
-     i = 0
+    i = 0
      while i < len(text):
         if text[i] in ".?:":  # If we find a delimiter
             print(text[:i + 1].strip())  # Print up to the punctuation
