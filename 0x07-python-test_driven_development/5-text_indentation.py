@@ -11,20 +11,20 @@ def text_indentation(text):
 	Returns:
 		A new line with a set of strings in the argument
 	"""
-	if not isintance(text, str):
-		raise TypeError("text must be a string")
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
 
-	count = 0
-	while count < len(text) and text[count] == " ":
-        	count = count + 1
 
-    	while count < len(text):
-        	print(text[count], end="")
-        	if text[count] == "\n" or text[count] in ".?:":
-            		if text[count] in ".?:":
-                		print("\n")
-            		count = count + 1
-            		while count < len(text) and text[count] == " ":
-                		count = count + 1
-            		continue
-        	count = count + 1
+     i = 0
+     while i < len(text):
+        if text[i] in ".?:":  # If we find a delimiter
+            print(text[:i + 1].strip())  # Print up to the punctuation
+            print()  # One newline
+            print()  # Second newline
+            text = text[i + 1:]  # Cut off what we printed
+            i = 0  # Restart loop from the beginning of the new text
+        else:
+            i += 1
+
+    if text.strip():  # Print any remaining text (no punctuation at the end)
+        print(text.strip())
