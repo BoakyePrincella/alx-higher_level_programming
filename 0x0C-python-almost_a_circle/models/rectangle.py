@@ -2,7 +2,7 @@
 """This module has one class that inherits from base"""
 
 
-from .base import Base
+from  models.base import Base
 
 
 class Rectangle(Base):
